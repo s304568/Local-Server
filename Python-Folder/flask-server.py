@@ -19,11 +19,11 @@ animals = {
 def get_name():
     return jsonify(names)
 
-@app.route('/animals', methods = ["Get"])
+@app.route('/animals', methods = ["GET"])
 def get_animals():
     animal = request.args.get("animal")
     if animal in animals:
-        return jsonify(animals)
+        return jsonify(animals[animal])
     else:
         return '', 400
 
