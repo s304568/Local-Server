@@ -7,7 +7,7 @@ function ApiRequester() {
   const handleClick = async () => {
     setResponseText("");
     try {
-      const response = await axios.get("URL");
+      const response = await axios.get("http://127.0.0.1:5000/animals");
       setResponseText(JSON.stringify(response.data));
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -20,10 +20,17 @@ function ApiRequester() {
 
   return (
     <>
-      <button type="button" onClick={handleClick}>
-        Send Request
-      </button>
-      {responseText && <p>Response: {responseText}</p>}
+      <div className="Form-Box">
+        <form>
+          <label>
+            <input type="text" />
+          </label>
+        </form>
+        <button type="button" onClick={handleClick}>
+          Send Request
+        </button>
+        {responseText && <p>Response: {responseText}</p>}
+      </div>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import ApiRequester from "./ApiRequster";
+import ApiRequester from "./ApiRequester";
 
 function App() {
   return <ApiRequester />;
